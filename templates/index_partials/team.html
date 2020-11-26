@@ -1,0 +1,20 @@
+<section id="team">
+    <h1 class="about-text">Meet the team</h1>
+
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            {% for member in team %}
+                <div class="col-lg-4 justify-content-center">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ member.picture.url }}" alt="team_pic">
+                        <div class="card-body">
+                            <p class="card-text">{{ member.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+</section>

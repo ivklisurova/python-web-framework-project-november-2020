@@ -1,10 +1,15 @@
 from django.shortcuts import render
 
-
 # Create your views here.
+from app.models import Team
+
 
 def index(req):
-    return render(req, 'index.html')
+    team = Team.objects.all()
+    context = {
+        'team': team
+    }
+    return render(req, 'index.html', context)
 
 
 def contact_us(req):
@@ -13,3 +18,7 @@ def contact_us(req):
 
 def all_products(req):
     return render(req, 'all_products.html')
+
+
+def login(req):
+    return render(req, 'login.html')
