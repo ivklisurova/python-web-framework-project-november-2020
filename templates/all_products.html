@@ -8,7 +8,27 @@
 
     {#  Products here #}
 
-    Products - Cards
+
+    <section id="grid">
+        <h1 class="grid-heading">Pick a Cake</h1>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                {% for item in products %}
+                    <div class="col-lg-3 col-md-6 col-sm-12 justify-content-center product-card">
+                        <div class="card mx-auto" style="width: 18rem;">
+                            <img class="card-img-top" src="{{ item.picture.url }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ item.name }}</h5>
+                                <h6 class="card-title">Price: {{ item.price }} BGN</h6>
+                                <p class="card-text">{{ item.description }}</p>
+                                <a href="#" class="btn add-button">Add to basket</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 
 
     {% include "partials/footer_section.html" %}

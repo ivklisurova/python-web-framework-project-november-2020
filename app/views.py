@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from app.models import Team
+from app.models import Team, Product
 
 
 def index(req):
@@ -13,11 +13,16 @@ def index(req):
 
 
 def contact_us(req):
+
     return render(req, 'contact_us.html')
 
 
 def all_products(req):
-    return render(req, 'all_products.html')
+    products = Product.objects.all()
+    context = {
+        'products': products
+    }
+    return render(req, 'all_products.html', context)
 
 
 def login(req):

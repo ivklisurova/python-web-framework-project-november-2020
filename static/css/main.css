@@ -141,3 +141,43 @@ h2 {
 .address:hover {
     color: #ea2c62;
 }
+
+
+/*Products grid*/
+#grid {
+    background-color: #ffb6b9;
+    position: relative;
+    z-index: 1;
+    color: #495464;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+.grid-heading {
+    color: #f4f4f2;
+    position: center;
+    padding-bottom: 2%;
+}
+
+/*Card*/
+
+.product-card{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    position: center;
+
+}
+
+/*Add to basket button*/
+
+.add-button {
+    color: #f4f4f2;
+    background-color: #495464;
+}
+
+.add-button:hover {
+    color: #f4f4f2;
+    background-color: #ea2c62;
+}
+
+
