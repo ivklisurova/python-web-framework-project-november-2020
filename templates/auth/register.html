@@ -6,18 +6,19 @@
 {# Register form #}
 {% block content %}
     {% load bootstrap4 %}
-    <h2 class="text-center">Register</h2>
+    <h2 class="text-center address">Register</h2>
     <div class="row d-flex justify-content-center">
-        <form method="post" class="form"  action="{% url 'register-user' %}">
+        <form method="post" class="form" action="{% url 'register-user' %}">
             {% csrf_token %}
             {% bootstrap_form form %}
+
+            {% bootstrap_form profile %}
+
             {% buttons %}
                 <button type="submit" class="btn add-button">Submit</button>
             {% endbuttons %}
 
         </form>
     </div>
-
-
 
 {% endblock %}
