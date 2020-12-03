@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44c589cf-2fc3-4902-b9fc-f9ff6214997f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app_authentication/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_authentication/migrations/0002_remove_userprofile_picture.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_authentication/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_authentication/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_authentication/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_authentication/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/navigation.html" afterDir="false" />
-    </list>
+    <list default="true" id="44c589cf-2fc3-4902-b9fc-f9ff6214997f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +109,7 @@
       <workItem from="1606838215532" duration="10238000" />
       <workItem from="1606937204056" duration="8076000" />
       <workItem from="1606945425770" duration="89000" />
-      <workItem from="1607024412968" duration="9113000" />
+      <workItem from="1607024412968" duration="9503000" />
     </task>
     <task id="LOCAL-00001" summary="updates of templates, database set up, team model creation">
       <created>1606410793459</created>
@@ -141,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606945455602</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="authentication, register and log in">
+      <created>1607033788361</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607033788361</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +149,8 @@
     <MESSAGE value="templates" />
     <MESSAGE value="updates of templates, database set up, team model creation" />
     <MESSAGE value="product page update" />
-    <option name="LAST_COMMIT_MESSAGE" value="product page update" />
+    <MESSAGE value="authentication, register and log in" />
+    <option name="LAST_COMMIT_MESSAGE" value="authentication, register and log in" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="53" key="#Plugins" timestamp="1606158173162">
@@ -170,10 +169,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605216415807" />
-    <state x="371" y="0" key="CommitChangelistDialog2" timestamp="1606945453992">
+    <state x="371" y="0" key="CommitChangelistDialog2" timestamp="1607033787000">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="371" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1606945453992" />
+    <state x="371" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1607033787000" />
     <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1606854031417">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -186,26 +185,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="510" y="117" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605993743232" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1607032711023">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1607033722157">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607032711023" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1607032711023">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607033722157" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1607033722157">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607032711023" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1607032711023">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607033722157" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1607033722157">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607032711023" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1607032711023">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607033722157" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1607033722157">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607032711023" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606945463104">
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607033722157" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607033794492">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606945463104" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607033794492" />
     <state x="431" y="145" width="672" height="160" key="search.everywhere.popup" timestamp="1606396102003">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
