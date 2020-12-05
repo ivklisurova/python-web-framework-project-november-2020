@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from app_authentication.models import UserProfile
 
 
+# Create account/Login/Log out
+
 class RegisterForm(UserCreationForm):
     class Meta:
         model = User
@@ -28,3 +30,23 @@ class LoginForm(forms.Form):
     password = forms.CharField(
         widget=forms.PasswordInput()
     )
+
+
+#     Update profile from user/Delete profile from user
+
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email']
+
+
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['address', 'city']
+
+
+class UserDeleteForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = []

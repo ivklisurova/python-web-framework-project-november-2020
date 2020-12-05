@@ -1,0 +1,22 @@
+{% extends "common/base.html" %}
+{% load static %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{# Edit form #}
+{% block content %}
+    {% load bootstrap4 %}
+    <h2 class="text-center address">Are you sure you want to delete your profile?</h2>
+    <div class="row d-flex justify-content-center">
+        <form method="post" class="form" action="{% url 'delete-profile' %}">
+            {% csrf_token %}
+            {% bootstrap_form delete_form %}
+
+            {% buttons %}
+                <button type="submit" class="btn add-button">Delete</button>
+            {% endbuttons %}
+
+        </form>
+    </div>
+
+{% endblock %}

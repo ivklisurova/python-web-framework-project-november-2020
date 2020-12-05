@@ -16,14 +16,14 @@
             {% buttons %}
                 <button type="submit" class="btn add-button">Login</button>
             {% endbuttons %}
-            <p>Do not have account?</p>
-            <a href="{% url 'register-user' %}">Register</a>
+            <p class="headers">Do not have account?</p>
+            <a href="{% url 'register-user' %}">Register Now</a>
 
         </form>
     </div>
     {% for message in messages %}
 
-        <div class="alert alert-success">
+        <div class="alert alert-danger">
             <a class="close" href="{% url 'login-user' %}}" data-dismiss="alert">×</a>
 
             {{ message }}

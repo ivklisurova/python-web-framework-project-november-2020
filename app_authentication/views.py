@@ -1,12 +1,15 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.db import transaction
 from django.shortcuts import render, redirect
 
 # Create your views here.
 
 # Login/Logout/Register
-from app_authentication.forms import RegisterForm, ProfileForm, LoginForm
+from app_authentication.forms import RegisterForm, ProfileForm, LoginForm, UserUpdateForm, \
+    ProfileUpdateForm, UserDeleteForm
 
 
 @transaction.atomic
@@ -63,8 +66,54 @@ def login_user(req):
                 return redirect('login-user')
 
 
-
-
 def logout_user(req):
     logout(req)
     return redirect('index')
+
+
+def user_profile(req):
+    return render(req, 'auth/profile.html')
+
+
+@login_required
+def update_profile(req):
+    if req.method=='GET':
+        form = UserUpdateForm(instance=req.user)
+        profile_form = ProfileUpdateForm(instance=req.user.userprofile)
+
+        context = {
+            'form': form,
+            'profile_form': profile_form,
+        }
+        return render(req, 'auth/edit-profile.html', context)
+    else:
+        form = UserUpdateForm(req.POST, instance=req.user)
+        profile = ProfileUpdateForm(req.POST, req.FILES, instance=req.user.userprofile)
+
+        if form.is_valid() and profile.is_valid():
+            form.save()
+            profile.save()
+            return redirect('user-profile')
+
+        context = {
+            'form': form,
+            'profile': profile,
+        }
+        return render(req, 'auth/edit-profile.html', context)
+
+
+@login_required
+def delete_profile(req):
+    if req.method=='GET':
+        delete_form = UserDeleteForm(instance=req.user)
+
+        context = {
+            'delete_form': delete_form,
+        }
+
+        return render(req, 'auth/delete-profile.html', context)
+    else:
+        delete_form = UserDeleteForm(req.POST, instance=req.user)
+        user = req.user
+        user.delete()
+        return redirect('index')

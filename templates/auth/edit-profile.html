@@ -1,0 +1,24 @@
+{% extends "common/base.html" %}
+{% load static %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{# Edit form #}
+{% block content %}
+    {% load bootstrap4 %}
+    <h2 class="text-center address">Manage Your Profile</h2>
+    <div class="row d-flex justify-content-center">
+        <form method="post" class="form" action="{% url 'user-update' %}">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            {% bootstrap_form profile_form %}
+
+            {% buttons %}
+                <button type="submit" class="btn add-button">Edit</button>
+            {% endbuttons %}
+
+        </form>
+    </div>
+
+{% endblock %}

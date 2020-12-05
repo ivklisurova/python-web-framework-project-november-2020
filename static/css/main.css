@@ -18,6 +18,14 @@ h2 {
 
 }
 
+.headers {
+    color: #ea2c62;
+}
+
+.paddings{
+    padding: 1.5%;
+}
+
 /* Navigation */
 
 #navigation {
@@ -201,6 +209,13 @@ h2 {
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
+
+/* Profile section*/
+.user {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 
 
 

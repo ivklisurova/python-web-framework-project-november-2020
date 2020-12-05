@@ -1,0 +1,63 @@
+{% extends "common/base.html" %}
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+    {% include "partials/navigation.html" %}
+
+
+    <section id="profile">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-12 ">
+                    <i class="far fa-user-circle fa-5x user address"></i>
+                    <h3>Welcome, {{ user.username }}</h3>
+                    <h6 class="headers paddings">Manage your account, info and security for faster and better
+                        experience</h6>
+                    <ul class="list-group list-group-flush paddings">
+                        <li class="list-group-item">First name: {{ user.first_name }}</li>
+                        <li class="list-group-item">Last Name: {{ user.last_name }}</li>
+                        <li class="list-group-item">E-mail: {{ user.email }}</li>
+                        <li class="list-group-item">Address: {{ user.userprofile.address }}</li>
+                        <li class="list-group-item">City: {{ user.userprofile.city }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a href="{% url 'user-update' %}" class="btn add-button">Edit My Profile</a>
+        <a href="{% url 'delete-profile' %}" class="btn add-button">Delete My Profile</a>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 ">
+                    <h6 class="headers paddings">My Basket </h6>
+                    <i class="fas fa-shopping-basket fa-2x"></i>
+                    <ul class="list-group list-group-flush paddings">
+                        <li class="list-group-item ">Cras justo odio <i class="far fa-trash-alt"></i></li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item list-group-item-info">Total:</li>
+                        <li class="list-group-item"><a href="#" class="btn add-button">Check out my order</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 ">
+                    <h6 class="headers paddings">My Orders</h6>
+                    <i class="fas fa-box-open fa-2x"></i>
+                    <ul class="list-group list-group-flush paddings">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Morbi leo risus</li>
+                        <li class="list-group-item">Porta ac consectetur ac</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    {% include 'partials/footer_section.html' %}
+{% endblock %}
