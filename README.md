@@ -9,7 +9,7 @@
 * [Contact](#contact)
 
 ### General info
-The project is a fictional online store. The project is part of the Python trail in Softuni. The aim is to show at the end of the course the skills acquired during the course.
+The project is a fictional online store with option to order only if user profile is created.
 
 ### Technologies
 - Python 3.8 
