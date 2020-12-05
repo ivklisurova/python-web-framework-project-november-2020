@@ -23,7 +23,7 @@ The project is a fictional online store. The project is part of the Python trail
 Project is not deployed. Please download and setup your to local environement
 
 ### Features
-* Features ready
+[Features ready]
 - Landing page
 - All products page
 - Contact us page
@@ -33,7 +33,7 @@ Project is not deployed. Please download and setup your to local environement
 - Edit Profile
 - Delete Profile
 
-* TODOs for future development
+[TODOs for future development]
 
 - User Basket
 - Check out form
