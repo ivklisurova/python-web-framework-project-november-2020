@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'app',
     'app_authentication',
     'bootstrap4',
+    'basket',
+    'cart'
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,5 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
+
+CART_SESSION_ID = 'cart'

@@ -21,10 +21,11 @@
                                 <h5 class="card-title">{{ item.name }}</h5>
                                 <h6 class="card-title">Price: {{ item.price }} BGN</h6>
                                 <p class="card-text">{{ item.description }}</p>
+
                                 {% if user.is_authenticated %}
-                                    <a href="#" class="btn add-button">Add to basket</a>
+                                    <a href="{% url 'review-product' item.id %}" class="btn add-button">Add to cart</a>
                                 {% else %}
-                                    <a href="{% url 'login-user' %}" class="btn add-button">Add to basket</a>
+                                    <a href="{% url 'login-user' %}" class="btn add-button">Add to cart</a>
                                 {% endif %}
 
 
