@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "common/base.html" %}
+{% load static %}
 
-</body>
-</html>
+{% block title %}Review Product{% endblock %}
+
+{# Edit form #}
+{% block content %}
+    {% load bootstrap4 %}
+    <h2 class="text-center address">Delete product</h2>
+    <div class="row d-flex justify-content-center">
+        <form method="post" class="form">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            {% buttons %}
+                <button type="submit" class="btn add-button">Delete</button>
+            {% endbuttons %}
+
+        </form>
+    </div>
+
+{% endblock %}

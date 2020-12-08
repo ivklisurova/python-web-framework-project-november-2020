@@ -112,7 +112,7 @@ def delete_profile(req):
 
         return render(req, 'auth/delete-profile.html', context)
     else:
-        delete_form = UserDeleteForm(req.POST, instance=req.user)
+        UserDeleteForm(req.POST, instance=req.user)
         user = req.user
         user.delete()
         return redirect('index')

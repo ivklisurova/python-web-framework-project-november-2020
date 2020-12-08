@@ -24,8 +24,8 @@
                 <td>{{ item.name }}</td>
                 <td>{{ item.quantity }}</td>
                 <td>{{ item.price }}</td>
-                <td>{{ item.price }}</td>
-                <td><a href="{% url 'delete-product' %}"><i class="fas fa-trash-alt"></i></a></td>
+                <td>{{ item.get_total }}</td>
+                <td><a href="{% url 'delete-product' item.id %}"><i class="fas fa-trash-alt"></i></a></td>
             </tr>
 
         {% endfor %}
@@ -33,7 +33,7 @@
         <tr class="total">
             <td>Total</td>
             <td colspan="3"></td>
-            <td class="num">BGN{{ cart.get_total_price }}</td>
+                <td class="num">BGN{{ total_price }}</td>
         </tr>
         </tbody>
     </table>

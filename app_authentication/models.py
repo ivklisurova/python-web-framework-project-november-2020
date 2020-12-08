@@ -1,8 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-
 # Create your models here.
+from basket.models import AddProduct
+
 
 class UserProfile(models.Model):
     address = models.CharField(max_length=20)
