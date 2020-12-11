@@ -2,6 +2,6 @@ from django.contrib import admin
 
 
 # Register your models here.
+from basket.models import ProductInBasket
 
-class AddProductAdmin(admin.ModelAdmin):
-    readonly_fields = ('name', 'price')
+admin.site.register(ProductInBasket)

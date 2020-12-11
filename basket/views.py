@@ -1,17 +1,16 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.db.models import F, Sum
 
 # Create your views here.
 from app.models import Product
 from basket.forms import ProductForm, DeleteProductForm
-from basket.models import AddProduct
+from basket.models import ProductInBasket
 
 
 @login_required
 def cart_detail(request):
-    products = AddProduct.objects.all()
-    total_price = sum([AddProduct.get_total(items) for items in products])
+    products = ProductInBasket.objects.all()
+    total_price = sum([ProductInBasket.get_total(items) for items in products])
 
     context = {
         'products': products,
@@ -34,18 +33,20 @@ def review_product(request, pk):
 
     else:
         form = ProductForm(request.POST or None)
+
         if form.is_valid():
             form.save()
             return redirect('all_products')
         else:
             context = {
-                'form': form
+                'form': form,
             }
             return render(request, 'cart/review-product.html', context)
 
 
+@login_required
 def delete_product(request, pk):
-    product_basket = AddProduct.objects.get(pk=pk)
+    product_basket = ProductInBasket.objects.get(pk=pk)
     if request.method=="GET":
         form = DeleteProductForm(instance=product_basket)
         context = {
@@ -55,3 +56,6 @@ def delete_product(request, pk):
     else:
         product_basket.delete()
         return redirect('cart_detail')
+
+
+

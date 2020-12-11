@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'app_authentication',
     'bootstrap4',
     'basket',
-    'cart'
+    'cart',
+    'orders',
 ]
 
 MIDDLEWARE = [

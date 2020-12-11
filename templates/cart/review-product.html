@@ -10,7 +10,9 @@
     <div class="row d-flex justify-content-center">
         <form method="post" class="form">
             {% csrf_token %}
+
             {% bootstrap_form form %}
+
 
             {% buttons %}
                 <button type="submit" class="btn add-button">Add</button>

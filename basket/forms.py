@@ -1,11 +1,12 @@
 from django import forms
+from django.contrib.auth.models import User
 
-from basket.models import AddProduct
+from basket.models import ProductInBasket
 
 
 class ProductForm(forms.ModelForm):
     class Meta:
-        model = AddProduct
+        model = ProductInBasket
         fields = ['name', 'quantity', 'price']
 
 

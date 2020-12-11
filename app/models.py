@@ -20,5 +20,6 @@ class Product(models.Model):
     quantity = models.IntegerField(default=1)
     description = models.TextField()
 
+
     def __str__(self):
         return f'{self.name}'

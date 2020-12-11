@@ -9,6 +9,7 @@ from django.shortcuts import render, redirect
 # Login/Logout/Register
 from app_authentication.forms import RegisterForm, ProfileForm, LoginForm, UserUpdateForm, \
     ProfileUpdateForm, UserDeleteForm
+from orders.models import Order
 
 
 @transaction.atomic
@@ -71,7 +72,11 @@ def logout_user(req):
 
 
 def user_profile(req):
-    return render(req, 'auth/profile.html')
+    orders = Order.objects.all()
+    context = {
+        'orders': orders,
+    }
+    return render(req, 'auth/profile.html', context)
 
 
 @login_required

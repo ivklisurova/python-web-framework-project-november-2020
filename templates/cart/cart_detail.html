@@ -33,13 +33,17 @@
         <tr class="total">
             <td>Total</td>
             <td colspan="3"></td>
-                <td class="num">BGN{{ total_price }}</td>
+            <td class="num">BGN{{ total_price }}</td>
         </tr>
         </tbody>
     </table>
     <p class="text-right">
         <a href="{% url 'all_products' %}" class="btn add-button">Continue shopping</a>
-        <a href="#" class="btn add-button">Checkout</a>
+        {% if products %}
+            <a href="{% url 'checkout' %}" class="btn add-button">Checkout</a>
+        {% else %}
+            <a href="{% url 'checkout' %}" class="btn add-button" role="button" aria-disabled="true">Checkout</a>
+        {% endif %}
     </p>
 
     {% include 'partials/footer_section.html' %}
