@@ -32,12 +32,17 @@ Project is not deployed. Please download and setup your to local environement
 - User Profile page
 - Edit Profile
 - Delete Profile
-
-[TODOs for future development]
-
 - User Basket
 - Check out form
 - My orders history
+
+[TODOs for future development]
+
+- Refactor code
+- Update structure and reusage of templates
+- CBV to be used instead 
+- Front-end fine tunes
+ 
 
 ### Project status
 Project status: in progress. 
