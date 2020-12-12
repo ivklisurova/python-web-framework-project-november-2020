@@ -1,0 +1,22 @@
+{% extends "common/base.html" %}
+{% load static %}
+
+{% block title %}Check me out{% endblock %}
+
+{% block content %}
+    {% include "partials/navigation.html" %}
+    <div class="container paddings">
+        <div class="jumbotron ">
+            <h1 class="display-4">Thank you for your order</h1>
+            <p class="lead">Your order is completed successfully!</p>
+            <i class="fas fa-check fa-5x tick"></i>
+            <hr class="my-4">
+            <p>We cannot wait to meet you again!</p>
+            <p class="lead">
+                <a class="btn add-button btn-lg" href="{% url 'user-profile' %}" role="button">Go to your profile to see your orders</a>
+            </p>
+        </div>
+    </div>
+
+    {% include 'partials/footer-fixed.html' %}
+{% endblock %}

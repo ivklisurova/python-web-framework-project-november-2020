@@ -7,45 +7,53 @@
 
     {% include "partials/navigation.html" %}
 
-    <h2 class="text-center address">My shopping cart</h2>
-    <table class="table table-hover table-bordered">
-        <thead class="thead-dark">
-        <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Unit price</th>
-            <th>Price</th>
-            <th>Remove</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for item in products %}
+    <div class="container-fluid">
+
+        <h2 class="text-center address">My shopping cart</h2>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
             <tr>
-                <td>{{ item.name }}</td>
-                <td>{{ item.quantity }}</td>
-                <td>{{ item.price }}</td>
-                <td>{{ item.get_total }}</td>
-                <td><a href="{% url 'delete-product' item.id %}"><i class="fas fa-trash-alt"></i></a></td>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Unit price</th>
+                <th>Price</th>
+                <th>Remove</th>
             </tr>
+            </thead>
+            <tbody>
+            {% if not is_empty %}
+                {% for item in products %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.price }}</td>
+                        <td>{{ item.get_total }}</td>
+                        <td><a href="{% url 'delete-product' item.id %}"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr>
 
-        {% endfor %}
+                {% endfor %}
 
-        <tr class="total">
-            <td>Total</td>
-            <td colspan="3"></td>
-            <td class="num">BGN{{ total_price }}</td>
-        </tr>
-        </tbody>
-    </table>
-    <p class="text-right">
-        <a href="{% url 'all_products' %}" class="btn add-button">Continue shopping</a>
-        {% if products %}
-            <a href="{% url 'checkout' %}" class="btn add-button">Checkout</a>
-        {% else %}
-            <a href="{% url 'checkout' %}" class="btn add-button" role="button" aria-disabled="true">Checkout</a>
-        {% endif %}
-    </p>
+                <tr class="total">
+                    <td>Total</td>
+                    <td colspan="3"></td>
+                    <td class="num">BGN{{ total_price }}</td>
+                </tr>
+            {% else %}
+                <tr class="headers">
+                    <td colspan="5">No products in basket</td>
+                </tr>
+            {% endif %}
+            </tbody>
+        </table>
+            <p class="text-right">
+                <a href="{% url 'all_products' %}" class="btn add-button">Continue shopping</a>
+                {% if not is_empty %}
+                    <a href="{% url 'checkout' %}" class="btn add-button">Checkout</a>
+                {% else %}
+                    <a href="#" class="btn add-button disabled">Checkout</a>
+                {% endif %}
+            </p>
 
-    {% include 'partials/footer_section.html' %}
+        {% include 'partials/footer_section.html' %}
 
 {% endblock %}

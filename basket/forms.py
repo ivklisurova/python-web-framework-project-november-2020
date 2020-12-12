@@ -10,6 +10,14 @@ class ProductForm(forms.ModelForm):
         fields = ['name', 'quantity', 'price']
 
 
+class UpdateProductForm(ProductForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for (name, field) in self.fields.items():
+            if name == 'name' or name == 'price':
+                field.widget.attrs['readonly'] = True
+
+
 class DeleteProductForm(ProductForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

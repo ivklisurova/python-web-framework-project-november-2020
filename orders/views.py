@@ -28,15 +28,15 @@ def checkout_form(request):
         }
         return render(request, 'orders/checkout.html', context)
     else:
-        form = UserUpdateForm(request.POST,instance=request.user)
-        profile_form = ProfileUpdateForm(request.POST,instance=request.user.userprofile)
+        form = UserUpdateForm(request.POST, instance=request.user)
+        profile_form = ProfileUpdateForm(request.POST, instance=request.user.userprofile)
         others = CheckoutForm(request.POST or None)
         products = ProductInBasket.objects.all()
 
         if others.is_valid():
             others.save()
             products.delete()
-            return redirect('cart_detail')
+            return redirect('thank-you')
 
         context = {
             'form': form,
@@ -45,7 +45,6 @@ def checkout_form(request):
         }
         return render(request, 'orders/checkout.html', context)
 
-@login_required
 
-def my_orders_details(request):
-    pass
+def thank_you_for_order(request):
+    return render(request, 'orders/thank_you_page.html')

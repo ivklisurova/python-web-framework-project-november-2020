@@ -8,68 +8,67 @@
     {% load bootstrap4 %}
 
     <div class="container">
-        <div class="py-5 text-center">
+        <h2 class="text-center address">Checkout form</h2>
 
-            <h2 class="text-center address">Checkout form</h2>
-
-
-            <div class="row d-flex justify-content-end">
-                <div class="col-md-4 order-md-2 mb-4">
-                    <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="text-muted">Your cart</span>
-                        <span class="badge badge-secondary badge-pill">{{ count }}</span>
-                    </h4>
-                    {% for item in products %}
-                        <ul class="list-group mb-3">
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <div>
-                                <h6 class="my-0">{{ item.name }}</h6>
-                                <small class="text-muted">{{ item.name }}</small>
-                            </div>
-                            <span class="text-muted">{{ item.get_total }}</span>
-                        </li>
-                    {% endfor %}
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Total (BGN)</span>
-                        <strong>{{ total_price }} BGN</strong>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row d-flex justify-content-start">
-                <div class="col-md-8 order-md-1">
-                    <h4 class="mb-3">Billing address</h4>
-
-                    <form method="post" class="form" action="{% url 'checkout' %}">
-                        {% csrf_token %}
-                        {% bootstrap_form form %}
-
-                        {% bootstrap_form profile_form %}
-
-                        {% bootstrap_form others %}
-
-
-                        <h4 class="mb-3">Payment method</h4>
-
-                        <div class="d-block my-3">
-                            <div class="custom-control custom-radio">
-                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
-                                       checked
-                                       required>
-                                <label class="custom-control-label" for="credit">Pay on delivery</label>
-                            </div>
+        <div class="row d-flex justify-content">
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Your cart</span>
+                    <span class="badge badge-secondary badge-pill">{{ count }}</span>
+                </h4>
+                {% for item in products %}
+                    <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">{{ item.name }}</h6>
+                            <small class="text-muted">{{ item.name }}</small>
                         </div>
-
-                        <hr class="mb-6">
-                        {% buttons %}
-                            <button type="submit" class="btn add-button">Order now</button>
-                        {% endbuttons %}
-
-
-                    </form>
-                </div>
+                        <span class="text-muted">{{ item.get_total }}</span>
+                    </li>
+                {% endfor %}
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Total (BGN)</span>
+                    <strong>{{ total_price }} BGN</strong>
+                </li>
+                </ul>
             </div>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3 text-muted">Billing address</h4>
+
+                <form method="post" class="form" action="{% url 'checkout' %}">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+
+                    {% bootstrap_form profile_form %}
+
+                    {% bootstrap_form others %}
+
+
+                    <h4 class="mb-3">Payment method</h4>
+
+                    <div class="d-block my-3">
+                        <div class="custom-control custom-radio">
+                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
+                                   checked
+                                   required>
+                            <label class="custom-control-label" for="credit">Pay on delivery</label>
+                        </div>
+                    </div>
+
+                    <hr class="mb-6">
+                    {% buttons %}
+                        <button type="submit" class="btn add-button">Order now</button>
+                    {% endbuttons %}
+
+
+                </form>
+            </div>
+
+
         </div>
+
     </div>
+
+
     {% include 'partials/footer_section.html' %}
 {% endblock %}
